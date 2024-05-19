@@ -3,20 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Téléchargement de l'Installateur</title>
+    <title>Site de Téléchargement</title>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding-top: 20px;
+            position: fixed;
+            height: 100%;
+        }
+        .sidebar a {
+            padding: 15px 20px;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: #f4f4f4;
-            text-align: center;
-            padding: 50px;
         }
         .container {
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
+            text-align: center;
         }
         .logo img {
             width: 200px;
@@ -37,16 +65,63 @@
         .download-btn:hover {
             background-color: #0056b3;
         }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-        </div>
-        <h1>Téléchargez Shieldwave Installer</h1>
-        <p>Cliquez sur le bouton ci-dessous pour télécharger l'installateur.</p>
-        <a href="installer.exe" class="download-btn" download>Télécharger</a>
+    <div class="sidebar">
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('passloader')">PassLoader</a>
+        <a href="#" onclick="showSection('webplorer')">WebPlorer</a>
     </div>
+
+    <div class="content">
+        <div id="home" class="section active">
+            <div class="container">
+                <div class="logo">
+                    <img src="logoinstall.png" alt="Logo Installateur">
+                </div>
+                <h1>Téléchargez notre Installateur</h1>
+                <p>Cliquez sur le bouton ci-dessous pour télécharger l'installateur.</p>
+                <a href="installer.exe" class="download-btn" download>Télécharger</a>
+            </div>
+        </div>
+
+        <div id="passloader" class="section">
+            <div class="container">
+                <div class="logo">
+                    <img src="logoweb.png" alt="Logo PassLoader">
+                </div>
+                <h1>Téléchargez PassLoader</h1>
+                <p>Cliquez sur le bouton ci-dessous pour télécharger PassLoader.</p>
+                <a href="passloader.exe" class="download-btn" download>Télécharger PassLoader</a>
+            </div>
+        </div>
+
+        <div id="webplorer" class="section">
+            <div class="container">
+                <div class="logo">
+                    <img src="logoweb.png" alt="Logo WebPlorer">
+                </div>
+                <h1>Téléchargez WebPlorer</h1>
+                <p>Cliquez sur le bouton ci-dessous pour télécharger WebPlorer.</p>
+                <a href="webplorer.exe" class="download-btn" download>Télécharger WebPlorer</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
