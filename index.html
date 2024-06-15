@@ -25,6 +25,8 @@
             position: fixed;
             height: 100%;
             overflow-y: auto;
+            left: 0; /* Aligner la barre latérale à gauche */
+            top: 0; /* Aligner la barre latérale en haut */
         }
         .sidebar a {
             padding: 15px 20px;
@@ -54,6 +56,8 @@
             padding: 10px 0;
             font-size: 24px;
             font-family: 'Courier New', Courier, monospace;
+            line-height: 1; /* Enlever les espaces entre les lignes du titre */
+            margin-bottom: 20px; /* Espacement en bas du titre */
         }
         .container {
             background-color: #2e2e2e;
@@ -116,10 +120,10 @@
     <div class="content">
         <div class="header">
             <p>_____ __    _      __    __</p>
-            <p>/ ___// /_  (_)__  / /___/ /      ______ __   _____ </p>
+            <p>/ ___// /_  (_)__  / /___/ /      ______ __   _____</p>
             <p>\__ \/ __ \/ / _ \/ / __  / | /| / / __ `/ | / / _ \</p>
             <p>___/ / / / / /  __/ / /_/ /| |/ |/ / /_/ /| |/ /  __/</p>
-            <p>/____/_/ /_/_/\___/_/\__,_/ |__/|__/\__,_/ |___/\___/ </p>
+            <p>/____/_/ /_/_/\___/_/\__,_/ |__/|__/\__,_/ |___/\___/</p>
         </div>
         
         <div id="home" class="section active">
