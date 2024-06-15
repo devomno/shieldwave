@@ -7,29 +7,34 @@
     <link rel="icon" href="icon.ico" type="image/x-icon">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
+            background-color: #1e1e1e;
+            color: #e1e1e1;
             display: flex;
-            height: 100vh;
-            background-color: #222;
-            color: #fff; /* Couleur de texte par défaut pour tout le corps */
+            min-height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         .sidebar {
             width: 250px;
             background-color: #333;
+            color: #fff;
             padding-top: 20px;
             position: fixed;
             height: 100%;
+            overflow-y: auto;
         }
         .sidebar a {
             padding: 15px 20px;
             display: block;
-            color: #fff;
+            color: #ccc;
             text-decoration: none;
             transition: background-color 0.3s;
         }
         .sidebar a:hover {
-            background-color: #575757;
+            background-color: #444;
         }
         .content {
             margin-left: 250px;
@@ -38,33 +43,36 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #111111;
             flex-direction: column;
+            width: calc(100% - 250px);
         }
         .header {
             width: 100%;
-            background-color: #243c56;
+            background-color: #333;
+            color: #fff;
             text-align: center;
             padding: 10px 0;
             font-size: 24px;
-            font-weight: bold;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Courier New', Courier, monospace;
         }
         .container {
-            background-color: #fff;
+            background-color: #2e2e2e;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 600px;
         }
         .logo img {
-            width: 200px;
-            margin-bottom: 20px;
+            width: 150px;
+            margin-bottom: 10px;
         }
         .download-btn {
             display: inline-block;
             padding: 10px 20px;
-            margin: 20px 0;
+            margin-top: 15px;
             font-size: 18px;
             color: #fff;
             background-color: #007bff;
@@ -72,6 +80,7 @@
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s;
+            font-family: 'Courier New', Courier, monospace;
         }
         .download-btn:hover {
             background-color: #0056b3;
@@ -81,6 +90,19 @@
         }
         .section.active {
             display: block;
+        }
+        .code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            color: #fff;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            max-width: 100%;
+        }
+        .code p {
+            margin: 0;
         }
     </style>
 </head>
@@ -95,7 +117,7 @@
         <div class="header">
             <p>_____ __    _      __    __</p>
             <p>/ ___// /_  (_)__  / /___/ /      ______ __   _____ </p>
-            <p>\__ \/ __ \/ / _ \/ / __  / | /| / / __ `/ | / / _ \<br></p>
+            <p>\__ \/ __ \/ / _ \/ / __  / | /| / / __ `/ | / / _ \</p>
             <p>___/ / / / / /  __/ / /_/ /| |/ |/ / /_/ /| |/ /  __/</p>
             <p>/____/_/ /_/_/\___/_/\__,_/ |__/|__/\__,_/ |___/\___/ </p>
         </div>
@@ -108,6 +130,13 @@
                 <h1>Téléchargez notre Installateur</h1>
                 <p>Cliquez sur le bouton ci-dessous pour télécharger L'installer.</p>
                 <a href="" class="download-btn">HS</a>
+                <div class="code">
+                    <p>// Exemple de code</p>
+                    <p>function installateur() {</p>
+                    <p>    // Télécharger l'installateur</p>
+                    <p>    console.log("Téléchargement en cours...");</p>
+                    <p>}</p>
+                </div>
             </div>
         </div>
 
@@ -119,6 +148,13 @@
                 <h1>Téléchargez PassLoader V2</h1>
                 <p>Cliquez sur le bouton ci-dessous pour télécharger PassLoader V2.</p>
                 <a href="https://www.dropbox.com/scl/fi/w06cudz8f0pb5th4qga3l/WAISP.exe?rlkey=yfcfnwvkski5ebabjwbdwcv08&st=0cl5wfv0&dl=1" class="download-btn">Télécharger PassLoader V2</a>
+                <div class="code">
+                    <p>// Exemple de code</p>
+                    <p>function telechargerPassLoader() {</p>
+                    <p>    // Télécharger PassLoader V2</p>
+                    <p>    console.log("Téléchargement de PassLoader V2 en cours...");</p>
+                    <p>}</p>
+                </div>
             </div>
         </div>
 
@@ -130,6 +166,13 @@
                 <h1>Téléchargez WebPlorer</h1>
                 <p>Cliquez sur le bouton ci-dessous pour télécharger WebPlorer.</p>
                 <a href="https://www.dropbox.com/scl/fi/qi78h2a3tj15lwxsyor9j/webplorer.exe?rlkey=1uo4jmqy8vznq22uglsjo08cw&st=1u035zk0&dl=1" class="download-btn">Télécharger WebPlorer</a>
+                <div class="code">
+                    <p>// Exemple de code</p>
+                    <p>function telechargerWebPlorer() {</p>
+                    <p>    // Télécharger WebPlorer</p>
+                    <p>    console.log("Téléchargement de WebPlorer en cours...");</p>
+                    <p>}</p>
+                </div>
             </div>
         </div>
     </div>
