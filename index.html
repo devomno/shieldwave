@@ -3,114 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShieldWave</title>
+    <title>ShieldWave - Téléchargements</title>
     <link rel="icon" href="icon.ico" type="image/x-icon">
-    <style>
-        /* Configuration de la police et du fond */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #1e1e1e;
-            color: #e1e1e1;
-            display: flex;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-
-        /* Barre latérale droite avec effet de brillance */
-        .sidebar {
-            width: 250px;
-            background: linear-gradient(145deg, #333, #444);
-            padding-top: 20px;
-            position: fixed;
-            height: 100%;
-            right: 0;
-            top: 0;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2), 0px 0px 30px rgba(255, 255, 255, 0.1);
-            overflow-y: auto;
-            transition: all 0.3s ease;
-        }
-
-        /* Liens de la barre latérale avec animations */
-        .sidebar a {
-            padding: 15px 20px;
-            display: block;
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s, transform 0.3s;
-            font-size: 18px;
-            text-align: right;
-        }
-        .sidebar a:hover {
-            color: #fff;
-            transform: translateX(-10px);
-        }
-
-        /* Contenu principal */
-        .content {
-            margin-right: 250px;
-            padding: 20px;
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            width: calc(100% - 250px);
-        }
-
-        /* En-tête */
-        .header {
-            width: 100%;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 24px;
-        }
-
-        /* Conteneur des sections */
-        .container {
-            background-color: #2e2e2e;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 600px;
-        }
-
-        /* Boutons de téléchargement */
-        .download-btn {
-            display: inline-block;
-            padding: 12px 25px;
-            margin-top: 20px;
-            font-size: 18px;
-            color: #fff;
-            background-color: #ADA29C;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        .download-btn:hover {
-            background-color: #8A827D;
-        }
-
-        /* Onglets */
-        .section {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        .section.active {
-            display: block;
-            opacity: 1;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Barre latérale droite -->
+    <!-- Barre latérale gauche -->
     <div class="sidebar">
         <a href="#" onclick="showSection('hexEditor')">HEX Editor</a>
         <a href="#" onclick="showSection('ipSearch')">IP Search</a>
@@ -118,17 +16,17 @@
 
     <!-- Contenu principal -->
     <div class="content">
-        <div class="header">
-            <img src="image.png" alt="Logo du site">
-            <h1>ShieldWave</h1>
-        </div>
-
         <!-- Section HEX Editor -->
         <div id="hexEditor" class="section active">
             <div class="container">
                 <h2>HEX Editor</h2>
-                <p>Interface pour éditer et visualiser des fichiers en HEX.</p>
-                <!-- Contenu HEX Editor ici -->
+                <p>Éditeur hexadécimal pour visualiser et modifier des fichiers binaires.</p>
+                <a href="https://bit.ly/hexeditordwnldshieldwave" class="download-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Télécharger HEX Editor
+                </a>
             </div>
         </div>
 
@@ -136,8 +34,13 @@
         <div id="ipSearch" class="section">
             <div class="container">
                 <h2>IP Search</h2>
-                <p>Outil de recherche d'adresses IP et d'analyse réseau.</p>
-                <!-- Contenu IP Search ici -->
+                <p>Outil pour rechercher et analyser des adresses IP.</p>
+                <a href="https://bit.ly/ipsearchdwnldshieldwave" class="download-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Télécharger IP Search
+                </a>
             </div>
         </div>
     </div>
