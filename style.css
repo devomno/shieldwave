@@ -52,36 +52,36 @@ body {
     backdrop-filter: blur(5px); /* Floutage pour l'arrière-plan du contenu */
 }
 
-/* Conteneur principal adaptable */
+/* Conteneur principal de chaque onglet, redimensionnable selon la taille de la fenêtre */
 .container {
     background-color: rgba(46, 46, 46, 0.85);
     padding: 2vw;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     text-align: center;
-    width: 80vw;
-    max-width: 90vw;
-    max-height: 90vh;
+    width: 60vw; /* Largeur en pourcentage de l'écran */
+    max-width: 80vw; /* Limite la largeur sur écrans larges */
+    max-height: 80vh; /* Limite la hauteur pour éviter les débordements */
+    margin-bottom: 30px; /* Espace entre les conteneurs */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Boutons de téléchargement */
+/* Bouton de téléchargement */
 .download-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 25px;
-    margin-top: 20px;
-    font-size: 18px;
+    display: inline-block;
+    padding: 1vw 2vw;
+    font-size: 1.2vw; /* Taille du texte relative pour redimensionner */
     color: #fff;
     background-color: #4CAF50;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s;
 }
 .download-btn:hover {
-    background-color: #43a047;
-    transform: scale(1.05);
+    background-color: #45a049;
 }
 
 /* Icône de téléchargement */
@@ -101,17 +101,15 @@ body {
     display: block;
     opacity: 1;
 }
-/* Cadre de la miniature avec effet brillant, légèrement plus grand que la miniature */
+/* Cadre pour l'image miniature avec effet brillant */
 .thumbnail-frame {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5vw; /* Espace supplémentaire autour de l'image, adaptable */
+    width: 100%; /* Prend toute la largeur du conteneur parent */
+    padding: 1.5vw;
     background-color: #2e2e2e;
-    border-radius: 12px; /* Arrondi pour un style moderne */
+    border-radius: 12px;
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3), 0px 0px 30px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 90vw; /* Limite de taille sur petits écrans */
+    margin-bottom: 15px;
 }
 /* Effet de brillance au survol */
 .thumbnail-frame:hover {
@@ -119,21 +117,19 @@ body {
     box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.4), 0px 0px 50px rgba(255, 255, 255, 0.3);
 }
 
-/* Miniature avec taille fixe et adaptation */
+/* Image miniature redimensionnable */
 .thumbnail-frame img {
-    width: 100%; /* Prend toute la place du cadre */
-    max-width: 1438px; /* Taille maximum selon les dimensions d'origine */
-    max-height: 804px; /* Hauteur maximum selon les dimensions d'origine */
+    width: 100%;
     border-radius: 8px;
 }
-/* Ajustement sur petits écrans */
+
+/* Ajustement du conteneur sur petits écrans */
 @media (max-width: 768px) {
-    .thumbnail-frame {
-        padding: 2vw; /* Plus d’espace sur petits écrans */
-        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3), 0px 0px 20px rgba(255, 255, 255, 0.2);
+    .container {
+        width: 90vw; /* Prend plus de place sur les petits écrans */
+        padding: 3vw; /* Padding supplémentaire pour garder de l'espace */
     }
-    .thumbnail-frame img {
-        max-width: 90vw; /* Réduction de la taille de l’image pour les petits écrans */
-        height: auto; /* Ajuste la hauteur automatiquement */
+    .download-btn {
+        font-size: 4vw; /* Augmentation de la taille du bouton sur les petits écrans */
     }
 }
