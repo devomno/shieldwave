@@ -21,27 +21,12 @@
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            color: white;
-            font-family: Arial, sans-serif;
-            font-size: 1.2rem;
-            text-align: center;
-        }
-        #lockScreen button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <!-- Écran de verrouillage -->
-    <div id="lockScreen">
-        <div>
-            <p>Veuillez entrer le mot de passe pour accéder au site :</p>
-            <input type="password" id="passwordInput" placeholder="Mot de passe">
-            <button onclick="verifierMotDePasse()">Valider</button>
-        </div>
-    </div>
+    <div id="lockScreen"></div>
 
     <!-- Contenu de la page -->
     <div class="sidebar">
@@ -86,7 +71,33 @@
     </div>
 
     <script>
-const _0x20e043=_0x3105;function _0x3105(_0x39dcae,_0x31a421){const _0x4be33d=_0x4be3();return _0x3105=function(_0x31053c,_0x3ecba1){_0x31053c=_0x31053c-0x75;let _0x4994c8=_0x4be33d[_0x31053c];return _0x4994c8;},_0x3105(_0x39dcae,_0x31a421);}function _0x4be3(){const _0x4e5a25=['1072196IccMxv','add','8FzShaC','remove','2023224aBPiDP','classList','value','active','SHA512','2436kAFUHp','3905wRGkph','getElementById','forEach','3201ca9771aa8e1227bdaa20953721dd8a0c3bd8a24b0be0f8e4300617f08cd54b0d781f9429b6c91666d152a9d8d26aa7f9dcfd78c9fbec4bd1d7682453fdd0','none','style','2532418hHqrbp','.section','777270NwCrKD','1903650XUMsKe','Mot\x20de\x20passe\x20incorrect.\x20Veuillez\x20réessayer.','4513284tqihEa'];_0x4be3=function(){return _0x4e5a25;};return _0x4be3();}(function(_0x2e8056,_0x1f34b7){const _0x1bc152=_0x3105,_0x478863=_0x2e8056();while(!![]){try{const _0xa338d3=parseInt(_0x1bc152(0x7e))/0x1+parseInt(_0x1bc152(0x7b))/0x2+-parseInt(_0x1bc152(0x7a))/0x3+-parseInt(_0x1bc152(0x82))/0x4+parseInt(_0x1bc152(0x88))/0x5*(parseInt(_0x1bc152(0x87))/0x6)+parseInt(_0x1bc152(0x78))/0x7*(-parseInt(_0x1bc152(0x80))/0x8)+-parseInt(_0x1bc152(0x7d))/0x9;if(_0xa338d3===_0x1f34b7)break;else _0x478863['push'](_0x478863['shift']());}catch(_0x4c75f7){_0x478863['push'](_0x478863['shift']());}}}(_0x4be3,0xae101));const hashStocke=_0x20e043(0x75);function verifierMotDePasse(){const _0x41d03b=_0x20e043,_0x1db5b1=document[_0x41d03b(0x89)]('passwordInput')[_0x41d03b(0x84)],_0xdb2e36=CryptoJS[_0x41d03b(0x86)](_0x1db5b1)['toString']();_0xdb2e36===hashStocke?document[_0x41d03b(0x89)]('lockScreen')[_0x41d03b(0x77)]['display']=_0x41d03b(0x76):alert(_0x41d03b(0x7c));}function showSection(_0x5ccd1e){const _0x5272fb=_0x20e043;document['querySelectorAll'](_0x5272fb(0x79))[_0x5272fb(0x8a)](_0x2bed17=>{const _0x4442aa=_0x5272fb;_0x2bed17[_0x4442aa(0x83)][_0x4442aa(0x81)]('active');}),document[_0x5272fb(0x89)](_0x5ccd1e)[_0x5272fb(0x83)][_0x5272fb(0x7f)](_0x5272fb(0x85));}
+        const hashStocke = "3201ca9771aa8e1227bdaa20953721dd8a0c3bd8a24b0be0f8e4300617f08cd54b0d781f9429b6c91666d152a9d8d26aa7f9dcfd78c9fbec4bd1d7682453fdd0";
+        
+        function demandeMotDePasse() {
+            let motDePasseSaisi = prompt("Entrez le mot de passe pour accéder à cette page :");
+            
+            if (motDePasseSaisi) {
+                const hashSaisi = CryptoJS.SHA512(motDePasseSaisi).toString();
+                if (hashSaisi === hashStocke) {
+                    document.getElementById("lockScreen").style.display = "none";  // Cache l'image de verrouillage
+                } else {
+                    alert("Mot de passe incorrect. Veuillez réessayer.");
+                    demandeMotDePasse(); // Relance la demande de mot de passe
+                }
+            } else {
+                alert("Accès refusé. Redirection en cours...");
+                window.location.href = "https://www.google.com"; // Redirection si annulation
+            }
+        }
+
+        window.onload = demandeMotDePasse; // Demande de mot de passe au chargement de la page
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
     </script>
 </body>
 </html>
