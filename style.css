@@ -62,15 +62,17 @@ body {
     width: 65vw; /* Largeur relative à la fenêtre */
     height: auto;
     max-width: 80vw;
-    margin-bottom: 30px;
+    max-height: 85vh; /* Ajustement pour éviter le débordement vertical */
+    margin: 2vh auto; /* Marges proportionnelles aux bords de la fenêtre */
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: width 0.3s ease, max-width 0.3s ease;
 }
 
 /* Cadre pour l'image miniature avec effet brillant */
 .thumbnail-frame {
-    max-width: 100%;
+    width: 100%;
     padding: 2vw;
     background-color: #2e2e2e;
     border-radius: 12px;
@@ -92,20 +94,21 @@ body {
     border-radius: 8px;
 }
 
-/* Bouton de téléchargement */
+/* Bouton de téléchargement avec effet d’agrandissement au survol */
 .download-btn {
     display: inline-block;
     padding: 1vh 2vw;
-    font-size: 1.2vw; /* Taille du texte relative pour redimensionner */
+    font-size: 1.2vw;
     color: #fff;
     background-color: #4CAF50;
     border: none;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s ease;
 }
 .download-btn:hover {
     background-color: #45a049;
+    transform: scale(1.1); /* Effet d'agrandissement */
 }
 
 /* Icône de téléchargement */
