@@ -100,3 +100,28 @@ body {
     display: block;
     opacity: 1;
 }
+/* Style pour les cadres avec effet brillant autour des miniatures */
+.thumbnail-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3), 0px 0px 40px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail-frame:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.4), 0px 0px 50px rgba(255, 255, 255, 0.3);
+}
+
+/* Style des miniatures */
+.thumbnail-frame img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 8px;
+}
+
