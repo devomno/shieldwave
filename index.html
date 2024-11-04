@@ -6,6 +6,20 @@
     <title>ShieldWave - Téléchargements</title>
     <link rel="icon" href="icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script>
+        function demandeMotDePasse() {
+            const hashStocke = "3201ca9771aa8e1227bdaa20953721dd8a0c3bd8a24b0be0f8e4300617f08cd54b0d781f9429b6c91666d152a9d8d26aa7f9dcfd78c9fbec4bd1d7682453fdd0";
+            const motDePasseSaisi = prompt("Entrez le mot de passe pour accéder à cette page:");
+            const hashSaisi = CryptoJS.SHA512(motDePasseSaisi).toString();
+
+            if (hashSaisi !== hashStocke) {
+                alert("Mot de passe incorrect. Vous n'êtes pas autorisé à accéder à cette page.");
+                window.location.href = "https://www.google.com"; // Redirection si le mot de passe est incorrect
+            }
+        }
+        window.onload = demandeMotDePasse;
+    </script>
 </head>
 <body>
     <!-- Barre latérale gauche -->
@@ -16,40 +30,40 @@
 
     <!-- Contenu principal -->
     <div class="content">
-<!-- Section HEX Editor -->
-<div id="hexEditor" class="section active">
-    <div class="container">
-        <h2>HEX Editor</h2>
-        <div class="thumbnail-frame">
-            <img src="hexeditor.png" alt="Miniature HEX Editor">
+        <!-- Section HEX Editor -->
+        <div id="hexEditor" class="section active">
+            <div class="container">
+                <h2>HEX Editor</h2>
+                <div class="thumbnail-frame">
+                    <img src="hexeditor.png" alt="Miniature HEX Editor">
+                </div>
+                <p>Éditeur hexadécimal pour visualiser et modifier des fichiers batch.</p>
+                <a href="https://bit.ly/hexeditordwnldshieldwave" class="download-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Télécharger HEX Editor
+                </a>
+            </div>
         </div>
-        <p>Éditeur hexadécimal pour visualiser et modifier des fichiers batch.</p>
-        <a href="https://bit.ly/hexeditordwnldshieldwave" class="download-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-            </svg>
-            Télécharger HEX Editor
-        </a>
-    </div>
-</div>
 
-<!-- Section IP Search -->
-<div id="ipSearch" class="section">
-    <div class="container">
-        <h2>IP Search</h2>
-        <div class="thumbnail-frame">
-            <img src="ipsearch.png" alt="Miniature IP Search">
+        <!-- Section IP Search -->
+        <div id="ipSearch" class="section">
+            <div class="container">
+                <h2>IP Search</h2>
+                <div class="thumbnail-frame">
+                    <img src="ipsearch.png" alt="Miniature IP Search">
+                </div>
+                <p>Outil pour rechercher et analyser des adresses IP.</p>
+                <a href="https://bit.ly/ipsearchdwnldshieldwave" class="download-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Télécharger IP Search
+                </a>
+            </div>
         </div>
-        <p>Outil pour rechercher et analyser des adresses IP.</p>
-        <a href="https://bit.ly/ipsearchdwnldshieldwave" class="download-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-            </svg>
-            Télécharger IP Search
-        </a>
     </div>
-</div>
-
 
     <script>
         function showSection(sectionId) {
