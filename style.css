@@ -52,14 +52,14 @@ body {
     backdrop-filter: blur(5px); /* Floutage pour l'arrière-plan du contenu */
 }
 
-/* Conteneur principal des sections, adaptable à l'écran */
+/* Conteneur principal adaptable */
 .container {
     background-color: rgba(46, 46, 46, 0.85);
-    padding: 2vw; /* Adapté en fonction de la largeur de l'écran */
+    padding: 2vw;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     text-align: center;
-    width: 80vw; /* Largeur en fonction de l'écran */
+    width: 80vw;
     max-width: 90vw;
     max-height: 90vh;
 }
@@ -113,16 +113,17 @@ body {
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3), 0px 0px 40px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* Agrandissement de l'effet de brillance au survol */
+/* Effet de brillance au survol */
 .thumbnail-frame:hover {
     transform: scale(1.05);
     box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.4), 0px 0px 50px rgba(255, 255, 255, 0.3);
 }
 
-/* Miniature responsive */
+/* Miniature responsive avec agrandissement uniforme */
 .thumbnail-frame img {
-    width: 100%; /* Prend toute la largeur du conteneur */
-    max-width: 60vw; /* Limite la taille en fonction de l'écran */
-    max-height: 50vh; /* Limite la hauteur pour éviter le débordement */
+    max-width: 70vw; /* Limite la largeur par rapport à la taille de l'écran */
+    max-height: 70vh; /* Limite la hauteur pour respecter les proportions */
+    width: auto; /* Ajuste automatiquement la largeur pour maintenir les proportions */
+    height: auto; /* Ajuste automatiquement la hauteur pour maintenir les proportions */
     border-radius: 8px;
 }
