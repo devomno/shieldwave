@@ -101,17 +101,17 @@ body {
     display: block;
     opacity: 1;
 }
-/* Cadre de la miniature avec effet brillant */
+/* Cadre de la miniature avec effet brillant, légèrement plus grand que la miniature */
 .thumbnail-frame {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-    padding: 1vw;
+    padding: 1.5vw; /* Espace supplémentaire autour de l'image, adaptable */
     background-color: #2e2e2e;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3), 0px 0px 40px rgba(255, 255, 255, 0.2);
+    border-radius: 12px; /* Arrondi pour un style moderne */
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3), 0px 0px 30px rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 90vw; /* Limite de taille sur petits écrans */
 }
 /* Effet de brillance au survol */
 .thumbnail-frame:hover {
@@ -119,11 +119,21 @@ body {
     box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.4), 0px 0px 50px rgba(255, 255, 255, 0.3);
 }
 
-/* Miniature responsive avec agrandissement uniforme */
+/* Miniature avec taille fixe et adaptation */
 .thumbnail-frame img {
-    max-width: 70vw; /* Limite la largeur par rapport à la taille de l'écran */
-    max-height: 70vh; /* Limite la hauteur pour respecter les proportions */
-    width: auto; /* Ajuste automatiquement la largeur pour maintenir les proportions */
-    height: auto; /* Ajuste automatiquement la hauteur pour maintenir les proportions */
+    width: 100%; /* Prend toute la place du cadre */
+    max-width: 1438px; /* Taille maximum selon les dimensions d'origine */
+    max-height: 804px; /* Hauteur maximum selon les dimensions d'origine */
     border-radius: 8px;
+}
+/* Ajustement sur petits écrans */
+@media (max-width: 768px) {
+    .thumbnail-frame {
+        padding: 2vw; /* Plus d’espace sur petits écrans */
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3), 0px 0px 20px rgba(255, 255, 255, 0.2);
+    }
+    .thumbnail-frame img {
+        max-width: 90vw; /* Réduction de la taille de l’image pour les petits écrans */
+        height: auto; /* Ajuste la hauteur automatiquement */
+    }
 }
