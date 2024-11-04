@@ -1,0 +1,102 @@
+/* Configuration de la police et du fond */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: url('https://raw.githubusercontent.com/devomn0/storageSW/refs/heads/main/image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #e1e1e1;
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Barre latérale gauche avec effet de brillance */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(145deg, #333, #444);
+    padding-top: 20px;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2), 0px 0px 30px rgba(255, 255, 255, 0.1);
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+/* Liens de la barre latérale avec animations */
+.sidebar a {
+    padding: 15px 20px;
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+    font-size: 18px;
+}
+.sidebar a:hover {
+    color: #fff;
+    transform: translateX(10px);
+}
+
+/* Contenu principal */
+.content {
+    margin-left: 250px;
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: calc(100% - 250px);
+    color: #e1e1e1;
+    backdrop-filter: blur(5px); /* Floutage pour l'arrière-plan du contenu */
+}
+
+/* Conteneur des sections */
+.container {
+    background-color: rgba(46, 46, 46, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Boutons de téléchargement */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.download-btn:hover {
+    background-color: #43a047;
+    transform: scale(1.05);
+}
+
+/* Icône de téléchargement */
+.download-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+}
+
+/* Onglets */
+.section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.section.active {
+    display: block;
+    opacity: 1;
+}
