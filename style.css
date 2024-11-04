@@ -52,27 +52,29 @@ body {
     backdrop-filter: blur(5px); /* Floutage pour l'arrière-plan du contenu */
 }
 
-/* Conteneur principal de chaque onglet, redimensionnable selon la taille de la fenêtre */
+/* Conteneur principal redimensionné pour occuper l’espace de manière proportionnelle */
 .container {
     background-color: rgba(46, 46, 46, 0.85);
-    padding: 2vw;
+    padding: 2vh 2vw; /* Marges internes proportionnelles à la taille de l'écran */
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     text-align: center;
-    width: 60vw; /* Largeur en pourcentage de l'écran */
-    max-width: 80vw; /* Limite la largeur sur écrans larges */
-    max-height: 80vh; /* Limite la hauteur pour éviter les débordements */
-    margin-bottom: 30px; /* Espace entre les conteneurs */
+    width: 80vw; /* Largeur proportionnelle à la fenêtre */
+    height: 70vh; /* Hauteur proportionnelle à la fenêtre */
+    max-width: 90vw; /* Limite pour ne pas déborder sur grands écrans */
+    max-height: 90vh;
+    margin: auto; /* Centrer le conteneur */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around; /* Égalise l’espacement vertical */
 }
 
-/* Bouton de téléchargement */
+/* Bouton de téléchargement avec taille responsive */
 .download-btn {
     display: inline-block;
-    padding: 1vw 2vw;
-    font-size: 1.2vw; /* Taille du texte relative pour redimensionner */
+    padding: 1vh 2vw;
+    font-size: 1.5vw;
     color: #fff;
     background-color: #4CAF50;
     border: none;
@@ -103,8 +105,8 @@ body {
 }
 /* Cadre pour l'image miniature avec effet brillant */
 .thumbnail-frame {
-    width: 100%; /* Prend toute la largeur du conteneur parent */
-    padding: 1.5vw;
+    width: 95%; /* Prend presque toute la largeur du conteneur */
+    padding: 1vh;
     background-color: #2e2e2e;
     border-radius: 12px;
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3), 0px 0px 30px rgba(255, 255, 255, 0.2);
@@ -120,16 +122,16 @@ body {
 /* Image miniature redimensionnable */
 .thumbnail-frame img {
     width: 100%;
+    height: auto; /* Conserve les proportions de l'image */
     border-radius: 8px;
 }
-
-/* Ajustement du conteneur sur petits écrans */
+/* Ajustement pour les petits écrans */
 @media (max-width: 768px) {
     .container {
-        width: 90vw; /* Prend plus de place sur les petits écrans */
-        padding: 3vw; /* Padding supplémentaire pour garder de l'espace */
+        width: 90vw; /* Plus de largeur sur petits écrans */
+        height: 80vh; /* Plus de hauteur pour tout afficher */
     }
     .download-btn {
-        font-size: 4vw; /* Augmentation de la taille du bouton sur les petits écrans */
+        font-size: 4vw; /* Texte du bouton plus grand sur petits écrans */
     }
 }
